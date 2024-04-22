@@ -1,11 +1,15 @@
+/* eslint-disable radix */
 export default function iterateThroughObject(reportWithIterator) {
-  let result = '';
+  let output = '';
+  let isFirst = true;
 
   for (const employee of reportWithIterator) {
-    result += employee + ' | ';
+    if (!isFirst) {
+      output += ' | ';
+    }
+    output += `${employee}`;
+    isFirst = false;
   }
 
-  result = result.slice(0, -2);
-
-  return result;
+  return output;
 }
