@@ -3,16 +3,14 @@ export default class HolbertonCourse {
     // Check if the name is a string
     if (typeof (name) === 'string') {
       this._name = name;
-    }
-    else {
+    } else {
       throw new TypeError('Name must be a string');
     }
 
     // Check if the length is a number
     if (typeof (length) === 'number') {
       this._length = length;
-    }
-    else {
+    } else {
       throw new TypeError('Length must be a number');
     }
 
@@ -21,13 +19,11 @@ export default class HolbertonCourse {
       for (let i = 0; i < students.length; i += 1) {
         if (typeof students[i] === 'string') {
           this._students = students;
-        }
-        else {
+        } else {
           throw new TypeError('Students must be an array of strings');
         }
       }
-    }
-    else {
+    } else {
       throw new TypeError('Students must be an array');
     }
   }
@@ -40,8 +36,7 @@ export default class HolbertonCourse {
   set name(value) {
     if (typeof (value) === 'string') {
       this._name = value;
-    }
-    else {
+    } else {
       throw new TypeError('Name must be a string');
     }
   }
@@ -54,8 +49,7 @@ export default class HolbertonCourse {
   set length(value) {
     if (typeof (value) === 'number') {
       this._length = value;
-    }
-    else {
+    } else {
       throw new TypeError('Length must be a number');
     }
   }
@@ -70,13 +64,11 @@ export default class HolbertonCourse {
       for (let i = 0; i < value.length; i += 1) {
         if (typeof value[i] === 'string') {
           this._students = value;
-        }
-        else {
+        } else {
           throw new TypeError('Students must be an array of strings');
         }
       }
-    }
-    else {
+    } else {
       throw new TypeError('Students must be an array');
     }
   }
