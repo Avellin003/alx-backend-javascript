@@ -2,8 +2,7 @@ const getListStudentIds = (students) => {
   if (!Array.isArray(students)) {
     return [];
   }
-  const newArray = students.map((student) => student.id);
-  return newArray;
+  return students.map((student) => student.id);
 }
 
 export default getListStudentIds
