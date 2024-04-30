@@ -4,10 +4,8 @@ export default function updateStudentGradeByCity(lists, city, newGrade) {
   return lists
     .filter((object) => object.location === city)
     .map((student) => {
-
       newGrade.map((studentGrade) => {
         if (studentGrade.studentId === student.id) {
-
           student.grade = studentGrade.grade;
         }
 
