@@ -1,15 +1,16 @@
-export default function groceriesList() {
-  const finalMap = new Map();
-  const obj = {
+const groceriesList = () => {
+  const result = new Map();
+  const objects = {
     Apples: 10,
     Tomatoes: 10,
     Pasta: 1,
     Rice: 1,
     Banana: 5,
   };
+  for (const key of Object.keys(objects)) {
+    result.set(key, objects[key]);
+  }
+  return result;
+};
 
-  const lists = Array.from(Object.keys(object));
-
-  lists.map((item) => finalMap.set(item, object[item]));
-  return finalMap;
-}
+export default groceriesList;
