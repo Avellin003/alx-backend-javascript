@@ -1,11 +1,10 @@
-export default function hasValuesFromArray(set, array) {
-  /* eslint-disable array-callback-return */
-  let verd = true;
-  array.map((y) => {
-    if (!set.has(y)) {
-      verd = false;
+const hasValuesFromArray = (set, array) => {
+  for (const i of array) {
+    if (!set.has(i)) {
+      return false;
     }
-  });
-  
-  return verd;
-}
+  }
+  return true;
+};
+
+export default hasValuesFromArray;
