@@ -1,23 +1,30 @@
-const fs = require('fs').promises;
+import fs from 'fs';
+import { promisify } from 'util';
 
-async function readDatabase(filePath) {
+const readFile = promisify(fs.readFile);
+
+const readDatabase = async (filePath) => {
   try {
-    const data = await fs.readFile(filePath, 'utf8');
+    const data = await readFile(filePath, 'utf8');
     const lines = data.trim().split('\n');
-    const fieldMap = {};
 
-    lines.slice(1).forEach((line) => {
-      const [firstname, , , field] = line.split(',');
-      if (!fieldMap[field]) {
-        fieldMap[field] = [];
+    if (lines.length <= 1) throw new Error('Cannot load the database');
+
+    const fields = {};
+
+    for (let i = 1; i < lines.length; i += 1) {
+      const line = lines[i];
+      if (line.trim()) {
+        const [firstName, , , field] = line.split(',');
+        if (!fields[field]) fields[field] = [];
+        fields[field].push(firstName);
       }
-      fieldMap[field].push(firstname);
-    });
+    }
 
-    return fieldMap;
+    return fields;
   } catch (error) {
-    return Promise.reject(error);
+    throw new Error('Cannot load the database');
   }
-}
+};
 
-module.exports = { readDatabase };
+export default readDatabase;
