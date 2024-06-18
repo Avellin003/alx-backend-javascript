@@ -1,5 +1,5 @@
 import path from 'path';
-0;276;0cimport { readDatabase } from '../utils';
+import { readDatabase } from '../utils';
 
 class StudentsController {
   static async getAllStudents(req, res) {
