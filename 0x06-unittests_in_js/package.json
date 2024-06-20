@@ -1,0 +1,12 @@
+{
+  "name": "mocha-test-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}
